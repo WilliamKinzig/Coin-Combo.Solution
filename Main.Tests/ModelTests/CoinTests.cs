@@ -20,5 +20,21 @@ namespace CoinCombo.Tests
       Coin objectTest = new Coin();
       Assert.AreEqual(test,objectTest.Default());
     }
+    [TestMethod]
+    public void Return_Amount()
+    {
+      Coin objectTest = new Coin(4.00);
+      Assert.AreEqual(16,objectTest.CoinAmount(25));
+    }
+    [TestMethod]
+    public void Return_Array_Quarters_True()
+    {
+      Coin objectTest = new Coin(4.36);
+      int[] tempArray = objectTest.Calculate();
+      Assert.AreEqual(17,tempArray[0]);
+      Assert.AreEqual(1,tempArray[1]);
+      Assert.AreEqual(0,tempArray[2]);
+      Assert.AreEqual(1,tempArray[3]);
+    }
   }
 }
